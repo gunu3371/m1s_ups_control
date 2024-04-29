@@ -4,7 +4,6 @@ import time
 import subprocess
 import pwmio
 import board
-import multiprocessing
 
 piezo = pwmio.PWMOut(board.D15, variable_frequency=True)
 piezo.duty_cycle = 0
