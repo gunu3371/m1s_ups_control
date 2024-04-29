@@ -1,0 +1,15 @@
+Description=Check the M1S_UPS status
+
+After=syslog.target
+
+[Service]
+Type=simple
+
+User=root
+
+# working directory
+WorkingDirectory=/etc/m1s_ups/
+ExecStart=python3 -u ./service.py
+
+[Install]
+WantedBy=multi-user.target
