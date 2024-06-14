@@ -1,5 +1,5 @@
 #!/bin/bash
-
+python3 -m pip install -r requirements.txt
 mkdir -p /etc/m1s_ups/
 
 cp kill.sh /etc/m1s_ups/
