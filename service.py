@@ -90,7 +90,7 @@ class Alarm:
         self.piezo.frequency = 523
 
     def on(self):
-        self.piezo.duty_cycle = 45000
+        self.piezo.duty_cycle = 50000
 
     def off(self):
         self.piezo.duty_cycle = 0
@@ -115,6 +115,7 @@ while not killer.kill_now:
     elif ps == "chg":
         log.info('AC power restored Charging')
     elif ps == "dch":
+        buz.on()
         log.warn('AC power loss')
         pw = int(ups.get_curvol())
         if pw <= 3500:
@@ -130,5 +131,7 @@ while not killer.kill_now:
 
     log.info("Current Voltage "+ups.get_curvol()+"mV")
     time.sleep(0.5)
-
+    buz.off()
+    time.sleep(0.5)
+buz.off()
 log.info('UPS service stopped successfully')
