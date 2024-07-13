@@ -119,9 +119,9 @@ while not killer.kill_now:
         log.warn('AC power loss')
         pw = int(ups.get_curvol())
         if pw <= 3500:
+            log.crit('battery is too low Shut down system')
             ups.shutdown()
             os.system("shutdown now")
-            log.crit('battery is too low Shut down system')
         elif pw <= 3650:
             log.crit('battery is too low')
         elif pw <= 3800:
