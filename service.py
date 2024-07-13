@@ -122,10 +122,10 @@ while not killer.kill_now:
             ups.shutdown()
             os.system("shutdown now")
             log.crit('battery is too low Shut down system')
-        elif pw <= 3800:
-            log.warn('battery is low')
         elif pw <= 3650:
             log.crit('battery is too low')
+        elif pw <= 3800:
+            log.warn('battery is low')
     elif ps == "err":
         log.crit('UPS hardware error detect')
 
