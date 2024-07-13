@@ -1,4 +1,6 @@
 #!/bin/bash
+apt update
+apt install python3-pip
 python3 -m pip install -r requirements.txt
 mkdir -p /etc/m1s_ups/
 
