@@ -1,5 +1,5 @@
 #Adafruit-PlatformDetect>=3.58.0
-#Adafruit-Blinka>=8.32.0
+Adafruit-Blinka>=8.32.0
 #Adafruit-PureIO>=1.1.11
 #adafruit-circuitpython-neopixel-spi
 #adafruit-circuitpython-pca9685
