@@ -1,4 +1,5 @@
 #!/bin/bash
+systemctl disable --now m1s_ups
 apt update
 apt install python3-pip
 python3 -m pip install -r requirements.txt
