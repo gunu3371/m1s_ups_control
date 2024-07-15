@@ -5,6 +5,9 @@ ODROID-M1S 용 UPS모듈용 파이썬 스크립트
   + 자동 종료
   + UPS/전원상태를 로그에 저장
   + BE400같은 통신기능이 없는 UPS를 대신하여 다른 서버/컴퓨터에 종료신호 뿌리기(작업중)
++ ### 설치방법
+  + 1.https://wiki.odroid.com/odroid-m1s/application_note/circuitpython#set_environment 이링크를 따라서 /boot/config.ini 수정후 재부팅
+  + 2.[git clone](https://github.com/gunu3371/m1s_ups_control.git)
 ## EN
 Python script for UPS module for ODROID-M1S
 + ### Features
