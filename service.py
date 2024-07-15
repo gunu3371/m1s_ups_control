@@ -2,8 +2,6 @@ import serial
 import os
 import time
 import subprocess
-import pwmio
-import board
 import logging
 import threading
 from logging.handlers import RotatingFileHandler, TimedRotatingFileHandler
@@ -83,22 +81,56 @@ class Logger:
     def crit(self,message):
         self.logger.critical(message)
 
-class Alarm:
-    def __init__(self):
-        self.piezo = pwmio.PWMOut(board.D15, variable_frequency=True)
-        self.piezo.duty_cycle = 0
-        self.piezo.frequency = 523
-
-    def on(self):
-        self.piezo.duty_cycle = 50000
-
-    def off(self):
-        self.piezo.duty_cycle = 0
-
 killer = GracefulKiller()
 log = Logger()
 log.info('UPS service is starting')
 ups = UPS()
+
+try:
+    import pwmio
+    import board
+    asfdafsd
+    log.info('gpio module import success')
+except:
+    log.warn('gpio module import failed buzzer not working')
+    log.warn('Create a dummy class')
+    #Dummy class
+    class Alarm:
+        def __init__(self):
+            pass
+
+        def on(self):
+            pass
+
+        def off(self):
+            pass
+else:
+    try:
+        class Alarm:
+            def __init__(self):
+                self.piezo = pwmio.PWMOut(board.D15, variable_frequency=True)
+                self.piezo.duty_cycle = 0
+                self.piezo.frequency = 523
+
+            def on(self):
+                self.piezo.duty_cycle = 50000
+
+            def off(self):
+                self.piezo.duty_cycle = 0
+    except:
+        log.crit('gpio pin assignment failure')
+        log.warn('Create a dummy class')
+        #Dummy class
+        class Alarm:
+            def __init__(self):
+                pass
+
+            def on(self):
+                pass
+
+            def off(self):
+                pass
+
 buz = Alarm()
 
 buz.on()
