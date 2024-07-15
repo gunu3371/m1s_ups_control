@@ -10,7 +10,9 @@ ODROID-M1S 용 UPS모듈용 파이썬 스크립트
   + 2.'''git clone https://github.com/gunu3371/m1s_ups_control.git''' 실행
   + 3.'''sh install_service.sh''' 실행
 + ### 사용방법
-  + '''systemctl status m1s_ups''' 로 상태확인
+  + '''
+    systemctl status m1s_ups
+    ''' 로 상태확인
   + '''/etc/m1s_ups/log/''' 에서 로그확인
 ## EN
 Python script for UPS module for ODROID-M1S
