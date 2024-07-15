@@ -8,6 +8,6 @@ ODROID-M1S 용 UPS모듈용 파이썬 스크립트
 ## EN
 Python script for UPS module for ODROID-M1S
 + ### Features
- + Automatic shutdown
- + Save UPS/power status in log
- + Providing a shutdown signal to other servers/computers in place of a UPS that does not have a communication function such as BE400 (work in progress)
+  + Automatic shutdown
+  + Save UPS/power status in log
+  + Providing a shutdown signal to other servers/computers in place of a UPS that does not have a communication function such as BE400 (work in progress)
