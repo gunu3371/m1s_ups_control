@@ -89,7 +89,6 @@ ups = UPS()
 try:
     import pwmio
     import board
-    asfdafsd
     log.info('gpio module import success')
 except:
     log.warn('gpio module import failed buzzer not working')
