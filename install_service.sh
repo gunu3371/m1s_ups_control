@@ -2,7 +2,7 @@
 systemctl disable --now m1s_ups
 apt update
 apt install python3-pip
-python3 -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt --break-system-packages
 mkdir -p /etc/m1s_ups/log
 
 cp kill.sh /etc/m1s_ups/
