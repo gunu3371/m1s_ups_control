@@ -16,7 +16,6 @@ cp m1s_ups.service /etc/systemd/system/
 cd /etc/m1s_ups/
 python3 -m venv venv
 venv/bin/python3 -m pip install -r requirements.txt --break-system-packages
-rm /etc/m1s_ups/
 systemctl daemon-reload
 
 systemctl enable --now m1s_ups
