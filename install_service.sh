@@ -4,10 +4,9 @@ set -e
 systemctl disable --now m1s_ups
 apt update
 apt install python3-pip python3-venv python3-dev
+rm -rf /etc/m1s_ups/
 mkdir /etc/m1s_ups/
 mkdir /var/log/m1s_ups/
-
-rm -r /etc/m1s_ups/*
 
 cp kill.sh /etc/m1s_ups/
 cp service.py /etc/m1s_ups/
