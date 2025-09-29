@@ -9,7 +9,7 @@ User=root
 
 # working directory
 WorkingDirectory=/etc/m1s_ups/
-ExecStart=venv/bin/python3 -u ./service.py
+ExecStart=/etc/m1s_ups/venv/bin/python3 -u ./service.py
 
 [Install]
 WantedBy=multi-user.target
