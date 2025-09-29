@@ -61,27 +61,53 @@ class Logger:
         self.logger = logging.getLogger()
         self.logger.setLevel(logging.INFO)
         formatter = logging.Formatter('%(asctime)s %(levelname)s: %(message)s', datefmt='%Z %Y/%m/%d %H:%M:%S')
-        file_handler = RotatingFileHandler('./log/ups.log', maxBytes=1024*1024*10, backupCount=10)
+        file_handler = RotatingFileHandler('/var/log/m1s_ups/ups.log', maxBytes=1024*1024*10, backupCount=10)
         file_handler.setFormatter(formatter)
         consoleHandler = logging.StreamHandler()
         consoleHandler.setFormatter(formatter)
         self.logger.addHandler(file_handler)
         self.logger.addHandler(consoleHandler)
-    
+        self.priv_log = {"level":"","message":""}
+
     def debug(self,message):
-        self.logger.debug(message)
+        if self.priv_log["level"] == "debug" and self.priv_log["message"] == message:
+            pass
+        else:
+            self.priv_log["level"] = "debug"
+            self.priv_log["message"] = message
+            self.logger.debug(message)
 
     def info(self,message):
-        self.logger.info(message)
+        if self.priv_log["level"] == "info" and self.priv_log["message"] == message:
+            pass
+        else:
+            self.priv_log["level"] = "info"
+            self.priv_log["message"] = message
+            self.logger.info(message)
 
     def warn(self,message):
-        self.logger.warning(message)
+        if self.priv_log["level"] == "warn" and self.priv_log["message"] == message:
+            pass
+        else:
+            self.priv_log["level"] = "warn"
+            self.priv_log["message"] = message
+            self.logger.warning(message)
 
     def error(self,message):
-        self.logger.error(message)
+        if self.priv_log["level"] == "error" and self.priv_log["message"] == message:
+            pass
+        else:
+            self.priv_log["level"] = "error"
+            self.priv_log["message"] = message
+            self.logger.error(message)
 
     def crit(self,message):
-        self.logger.critical(message)
+        if self.priv_log["level"] == "crit" and self.priv_log["message"] == message:
+            pass
+        else:
+            self.priv_log["level"] = "crit"
+            self.priv_log["message"] = message
+            self.logger.critical(message)
 
 class PowerDB:
     def __init__(self):
@@ -162,7 +188,7 @@ buz = Alarm()
 buz.on()
 log.info('UPS service started successfully')
 log.info(f"UPS Firmware Ver {ups.get_firmver()}")
-time.sleep(0.3)
+time.sleep(2)
 buz.off()
 
 while not killer.kill_now:

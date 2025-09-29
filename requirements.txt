@@ -1,10 +1,4 @@
-#Adafruit-PlatformDetect>=3.58.0
 Adafruit-Blinka>=8.32.0
-#Adafruit-PureIO>=1.1.11
-#adafruit-circuitpython-neopixel-spi
-#adafruit-circuitpython-pca9685
-#adafruit-circuitpython-ssd1306
-#adafruit-circuitpython-displayio-ssd1306
 binho-host-adapter>=0.1.6
 gpiod>=1.5.4
 numpy>=1.21.5
