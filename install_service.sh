@@ -13,7 +13,7 @@ cp service.py /etc/m1s_ups/
 cp m1s_ups.service /etc/systemd/system/
 
 cd /etc/m1s_ups/
-python -m venv venv
+python3 -m venv venv
 venv/bin/python3 -m pip install -r requirements.txt --break-system-packages
 systemctl daemon-reload
 
